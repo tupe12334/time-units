@@ -1,5 +1,5 @@
 {
-  "name": "time-units",
+  "name": "@stockspro/time-units",
   "version": "1.0.0",
   "description": "",
   "main": "./dist/index.js",
