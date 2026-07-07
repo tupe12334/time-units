@@ -20,10 +20,14 @@ describe("testing the lib", () => {
     expect(new Time(1, "weeks").inMilliseconds).toBe(604800000);
   });
   test("months", () => {
-    expect(new Time(1, "months").inMilliseconds).toBe(2419200000);
+    // average month length (365.25 days/year / 12), not a fixed 4 weeks
+    expect(new Time(1, "months").inMilliseconds).toBe(2629800000);
+    expect(new Time(1, "months").inDays).toBeCloseTo(30.4375, 5);
   });
   test("years", () => {
-    expect(new Time(1, "years").inMilliseconds).toBe(29030400000);
-    expect(new Time(29030400000, "milliseconds").inYears).toBe(1);
+    // average year length (365.25 days), not 4*12=48 weeks (336 days)
+    expect(new Time(1, "years").inMilliseconds).toBe(31557600000);
+    expect(new Time(31557600000, "milliseconds").inYears).toBe(1);
+    expect(new Time(1, "years").inDays).toBeCloseTo(365.25, 5);
   });
 });
