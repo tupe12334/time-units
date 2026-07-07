@@ -93,12 +93,17 @@ type TimeUnits =
   | "months"
   | "years";
 
+// Average calendar lengths (accounts for leap years / 30-31 day months),
+// not fixed 4-week months, so a "year" comes out to ~365.25 days, not 336.
+const averageDaysInYear = 365.25;
+const averageDaysInMonth = averageDaysInYear / 12; // ~30.4375
+
 const differences = {
   millisecondsInSecond: 1000,
   secondsInMinute: 60,
   minutesInHour: 60,
   hoursInDay: 24,
   daysInWeek: 7,
-  weeksInMonth: 4,
+  weeksInMonth: averageDaysInMonth / 7,
   monthsInYear: 12,
 };
