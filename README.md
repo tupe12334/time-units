@@ -49,3 +49,7 @@ npm run build   # compile TypeScript to dist/
 npm test        # run the jest test suite
 npm run lint    # run eslint
 ```
+
+## See also
+
+- [moadim](https://moadim.io/) — loop engineering: build, schedule & run agent loops.
